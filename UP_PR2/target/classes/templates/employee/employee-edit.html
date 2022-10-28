@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta charset="UTF-8">
+    <title th:text="Редактирование + ' ' + ${employee.surname} + ${employee.name} + ${employee.middleName}"></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <div class="container">
+            <div th:insert="headers/Heads :: Header"></div>
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item" ><a href="/employee" aria-current="page">Сотрудники</a></li>
+            </ul>
+        </header>
+    </div>
+</head>
+<body>
+<form method="post">
+    <label>
+        <input th:field="*{employee.surname}" name="surname" type="text" placeholder="Фамилия" th:value="${employee.surname}">
+        <div th:if="${#fields.hasErrors('employee.surname')}" th:errors="*{employee.surname}"></div><br>
+        <input th:field="*{employee.name}" name="name" type="text" placeholder="Имя" th:value="${employee.name}">
+        <div th:if="${#fields.hasErrors('employee.name')}" th:errors="*{employee.name}"></div><br>
+        <input th:field="*{employee.middleName}" name="middleName" type="text" placeholder="Отчество" th:value="${employee.middleName}">
+        <div th:if="${#fields.hasErrors('employee.middleName')}" th:errors="*{employee.middleName}"></div><br>
+        <input th:field="*{employee.passport}" name="passport" type="number" min="1000000000" max="9999999999" placeholder="Паспорт" th:value="${employee.passport}">
+        <div th:if="${#fields.hasErrors('employee.passport')}" th:errors="*{employee.passport}"></div><br>
+
+        <input type="submit" value="Изменить сотрудника">
+    </label>
+</form>
+
+<a th:href="'/employee/details/' + ${employee.Id}">Отмена</a>
+</body>
+</html>

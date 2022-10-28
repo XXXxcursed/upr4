@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spring Security Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<div th:insert="headers/Heads :: Header"></div>
+<body>
+<div style="padding: 5px; margin-left: 5px">
+    <div th:if="${error}">
+        Такой пользователь уже существует.
+    </div>
+
+    <p th:text="${error}"></p>
+
+    <form action="/registration" method="post">
+
+        <input name="FIO" type="text" placeholder="ФИО" style="margin:10px" ><br>
+        <input name="passport" type="text" placeholder="Серия/номер паспорта" style="margin:10px"><br>
+        <input type="text" placeholder="Логин" name="username" style="margin:10px"/><br>
+        <input type="password" placeholder="Пароль" name="password" style="margin:10px"/><br>x
+
+        <div><input type="submit" class="btn" value="Зарегистрироваться" style="margin:10px;background:LightBlue"/></div>
+    </form>
+</div>
+</body>
+</html>

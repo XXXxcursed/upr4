@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление сотрудника</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <div th:insert="headers/Heads :: Header"></div>
+</head>
+<body>
+<form method="post">
+    <select  name="employee">
+        <div th:each="element : ${employees}">
+            <option th:text="${element.surname} +' '+ ${element.name}+' ' + ${element.middleName}"></option>
+        </div>
+    </select>
+    <select style="margin: 10px"  name="client">
+        <div th:each="element : ${clients}">
+            <option th:text="${element.getFIO()}"></option>
+        </div>
+    </select>
+    <button style="background:LightGreen; margin: 10px" class="btn" type="submit">Добавить</button> <br>
+    <a style="background:LightBlue; margin: 10px" class="btn" href="/employee">Отмена</a>
+</form>
+</body>
+</html>

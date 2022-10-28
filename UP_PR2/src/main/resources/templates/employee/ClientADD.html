@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление клиента</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <div th:insert="headers/Heads :: Header"></div>
+</head>
+<body>
+<form method="post">
+    <label>
+
+        <input name="FIO" type="text" placeholder="фио" style="margin:10px">
+        <input name="passport" type="number" min="1000000000000000" max="9999999999999999" placeholder="паспортные данные" style="margin:10px">
+        <p style="margin:10px">
+            <select  name="number" style="width:190px">
+        <div th:each="element : ${Tovar}">
+            <option th:text="${element.getnaimenovanie()}"></option>
+        </div><br>
+
+        <input class="btn" type="submit" value="Добавить клиента" style="background:LightBlue; margin: 10px">
+    </label>
+</form>
+
+<a style="background:LightBlue; margin: 10px" class="btn" href="/employee">Отмена</a>
+</body>
+</html>

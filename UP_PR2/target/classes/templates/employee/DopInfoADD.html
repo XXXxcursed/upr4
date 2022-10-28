@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление доп. информации</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <div th:insert="Headers/Heads :: Header"></div>
+</head>
+<body>
+<form method="post">
+    <label>
+
+        <input name="email" type="text" placeholder="Phone" style="margin:10px">
+        <input name="adress" type="text" placeholder="Email" style="margin:10px">
+
+
+        <input class="btn" type="submit" value="Добавить доп. инфо" style="background:LightGreen; margin: 10px">
+    </label>
+</form>
+
+<a style="background:LightBlue; margin: 10px" class="btn" href="/employee">Отмена</a>
+</body>
+</html>

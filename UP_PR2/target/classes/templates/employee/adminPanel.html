@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение роли</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <div th:insert="headers/Heads :: Header"></div>
+</head>
+<body>
+    <form method="post">
+        <label>
+            <div>
+                <div th:each="el: ${list_employee}" style="margin: 10px;text-align:Center">
+                    <h3 th:text="${el.getFIO()}"> </h3>
+                    <p th:text="'ID: ' + ${el.getId()}"></p>
+                    <a th:href="'/employee/admin/Edit-role/' + ${el.getId()}" class="btn" style="background:lightBlue">Изменить роль</a>
+                </div>
+            </div>
+        </label>
+    </form>
+</body>
+</html>
+
+

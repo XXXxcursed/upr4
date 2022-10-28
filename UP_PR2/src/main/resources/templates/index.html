@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <div th:insert="headers/Heads :: Header"></div>
+</head>
+<body>
+  <h1>Index</h1>
+  <form action="/main/">
+      <label>
+          <input name="x1" type="number" placeholder="x1">
+          <select name="m">
+              <option value="+" selected>+</option>
+              <option value="-">-</option>
+              <option value="*">*</option>
+              <option value="/">/</option>
+          </select>
+          <input name="x2" type="number" placeholder="x2"> <br/><br/>
+
+          <input type="submit" formmethod="get" value="GET">
+          <input type="submit" formmethod="post" value="POST">
+      </label>
+  </form>
+
+</body>
+</html>

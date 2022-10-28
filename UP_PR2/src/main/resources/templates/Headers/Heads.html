@@ -1,0 +1,23 @@
+<head xmlns:th="http://www.w3.org/1999/xhtml">
+    <meta charset="UTF-8">
+    <div th:fragment="Header">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <li style="margin-left: 20px"><form th:action="@{/logout}" method="post">
+                    <input class="nav-link active" type="submit" value="Sign Out"/>
+                </form></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee" class="nav-link active" aria-current="page">Сотрудники</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/" class="nav-link active" aria-current="page">Калькулятор</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee/DopInfoADD" class="nav-link active" aria-current="page">Добавить Доп. Информацию</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee/TovarADD" class="nav-link active" aria-current="page">Добавить товар </a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee/ClientADD" class="nav-link active" aria-current="page">Добавить клиента</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/registration" class="nav-link active" aria-current="page">регистрация</a></li>
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee/admin" class="nav-link active" aria-current="page">AdminPanel</a></li>
+
+                <li class="nav-item" style="margin-left: 20px"><a href="/employee/Client_EmployeeADD" class="nav-link active" aria-current="page">Добавить клиента в сотрудника</a></li>
+            </ul>
+        </header>
+    </div>
+</head>
+<footer style="background:LightGrey;text-align:center" th:fragment="Header">
+</footer>
